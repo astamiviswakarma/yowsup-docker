@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 ##
 
-wget -O WhatsApp.apk `curl -v https://apkpure.com/whatsapp-messenger/com.whatsapp/download \
+wget -O WhatsApp.apk `curl https://apkpure.com/whatsapp-messenger/com.whatsapp/download \
 | xmlstarlet fo --html --recover 2> /dev/null \
 | xmlstarlet sel -t -v '//a[@id="download_link"]/@href' -n 2> /dev/null`
 
