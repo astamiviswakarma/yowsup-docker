@@ -1,0 +1,8 @@
+version: "3"
+
+## 
+# features to be added rabbitMq, multiple consumers etc
+##
+services:
+  whatsapp:
+    build: .
