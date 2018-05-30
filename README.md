@@ -1,4 +1,4 @@
-#setup
+# setup
 for registration just copy `config/config.dist` to config/config file and do docker build.
 After docker has been built run following commands in docker shell with XXXXXXXXXX replaced with phone number.
 ```
