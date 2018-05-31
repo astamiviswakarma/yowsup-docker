@@ -1,8 +1,20 @@
 version: "3"
 
-## 
+##
 # features to be added rabbitMq, multiple consumers etc
 ##
 services:
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - '15672:15672'
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=mypass
   whatsapp:
     build: .
+    depends_on:
+      - rabbitmq
+    environment:
+      - BROKER_URI=amqp://admin:mypass@rabbitmq:5672/
+      # - BACKEND_URI=amqp://admin:mypass@rabbitmq:5672/

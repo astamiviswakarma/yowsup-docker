@@ -11,8 +11,14 @@ ADD bin bin
 RUN chmod a+x bin/replace-env-android.sh
 RUN bin/replace-env-android.sh
 
-RUN python setup.py build
-RUN python setup.py install
+RUN python setup.py build && python setup.py install
+RUN pip install gevent==1.2.2
+RUN pip install yowsup-celery
+
+COPY src /opt/yowsup/whatsapp
 COPY config/config /opt/yowsup
+COPY server/whatsapp.conf  /etc/supervisor/conf.d/
 RUN mkdir -p /var/log/supervisor
+RUN useradd -ms /bin/bash celery
+
 CMD ["/usr/bin/supervisord","-nc", "/etc/supervisor/supervisord.conf"]
