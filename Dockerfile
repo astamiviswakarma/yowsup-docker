@@ -14,8 +14,8 @@ RUN chmod a+x bin/replace-env-android.sh
 RUN bin/replace-env-android.sh
 
 RUN python setup.py build && python setup.py install
-RUN pip install gevent==1.2.2 yowsup-celery flower pycrypto protobuf pillow
-
+RUN pip install gevent==1.2.2 flower pycrypto protobuf pillow
+RUN pip install git+https://github.com/astamiviswakarma/yowsup-celery.git#egg=yowsup-celery
 COPY src /opt/yowsup/whatsapp
 COPY config/config /opt/yowsup
 COPY server/*.conf  /etc/supervisor/conf.d/
