@@ -1,0 +1,86 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Yowsup APIs",
+		"_postman_id": "5a5a7748-c7fa-5e2d-200c-89d433a9da60",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "yowsup_celery.tasks.connect",
+			"request": {
+				"url": "http://localhost:5555/api/task/send-task/yowsup_celery.tasks.connect",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46Y2hhbmdlaXQ=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "yowsup_celery.tasks.send_image",
+			"request": {
+				"url": "http://localhost:5555/api/task/send-task/yowsup_celery.tasks.send_image",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46Y2hhbmdlaXQ=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"args\": [\"919910099630\", \"/data/samples/food-1104167.jpg\"]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "yowsup_celery.tasks.send_message",
+			"request": {
+				"url": "http://localhost:5555/api/task/send-task/yowsup_celery.tasks.send_message",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46Y2hhbmdlaXQ=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"args\": [\"919910099630\", \"This message is from celery2...!\"]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
