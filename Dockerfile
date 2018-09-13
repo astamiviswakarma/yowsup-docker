@@ -4,7 +4,7 @@ RUN apt-get update
 RUN apt-get install -y python3-pip git-core supervisor wget xmlstarlet \
     curl zip unzip libmagickwand-dev \
     python3-dateutil
-
+RUN pip install --upgrade pip
 RUN git clone https://github.com/AragurDEV/yowsup.git /opt/yowsup
 WORKDIR /opt/yowsup
 RUN wget https://raw.githubusercontent.com/mgp25/classesMD5-64/master/dexMD5.py
